@@ -1,4 +1,8 @@
-FY*6/
+#Data
+FY**/
 GAMA_FY26H1_AccountSearchResult_files/
-output.csv
+output_prompts.csv
+
+#Python
 *.ipynb
+__pycache__/
