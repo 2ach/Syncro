@@ -19,18 +19,18 @@ class SalesChatWebDriver:
         self.store = r'C:\Users\Zach_Schulz-Behrend\dev\Syncro\\'
         num_of_prompts = random.randint(3, 12)
 
-        prompt = "Create {0} bullets as prompts. No formatting, just text. Make each bullet/prompt applicable to the latest internal " \
-        "information and documentation as of today. The goal is to make {0} unique prompts without sounding redundant. " \
-        "Good examples have the latest 411/911 information, new product details, and EOL data. All good examples have data sources. " \
-        "for the information. Bad examples are sample questions to ask a customer and general sales questions. " \
-        "Prompts should not end in a question.".format(num_of_prompts)
+        prompt = "Create {0} bullets, each being a prompt to ask you, SalesChat, no formatting, just text. No preamble, just bullets/prompts." \
+        "Make each bullet/prompt applicable to the latest internal information and documentation as of today. The goal is to make {0} unique prompts" \
+        " (to ask you, SalesChat) without sounding redundant. Good examples have the latest 411/911 information, new product details, and EOL data." \
+        "All good examples have data sources for the information. Bad examples are sample questions to ask a customer and general sales questions," \
+        " or prompt OUTPUTS/COMPLETIONS of latest information. Prompts should not end in a question.".format(num_of_prompts)
 
         self.gen_prompt = prompt
 
     def open_page(self):
         service = webdriver.EdgeService(executable_path=WEBDRIVER_EXE)
         options = webdriver.EdgeOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         self.driver = webdriver.Edge(service=service, options=options)
         self.driver.get(self.link)
         self.wait = WebDriverWait(self.driver, 600)
