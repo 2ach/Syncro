@@ -2,7 +2,9 @@
 FY**/
 GAMA_FY26H1_AccountSearchResult_files/
 output_prompts.csv
+/Orders
 
 #Python
 *.ipynb
 __pycache__/
+.env
