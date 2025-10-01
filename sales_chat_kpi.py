@@ -1,8 +1,11 @@
 from SalesChatWebDriver import SalesChatWebDriver as scwd
-
-LINK = 'https://dell.glean.com/chat/'
+from dotenv import load_dotenv
+import os
 
 if __name__ == "__main__":
+    load_dotenv()
+    LINK = os.getenv("LINK")
+
     scwd = scwd(LINK)
     scwd.open_page()
     scwd.send_prompt()
